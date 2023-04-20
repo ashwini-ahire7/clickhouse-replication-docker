@@ -1,7 +1,7 @@
 # clickhouse-replication-docker
 Data Replication in ClickHouse (Docker Based Setup) , 3 Node Replication Cluster
 
-## Requirment -- Download these files from Github repo
+## Requirement -- Download these files from Github repo
 
 ```
 docker-compose.yaml
