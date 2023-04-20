@@ -16,22 +16,6 @@ macros_3.xml
 
 Execute below commands from docker Host 
 ```
-root@ip-10-0-6-24:~/ashwini_work/clickhouse_Ashwini# docker exec -it clickhouse01  bash
-root@clickhouse01:/#
-root@clickhouse01:/#
-root@clickhouse01:/#
-root@clickhouse01:/# clickhouse-client
-ClickHouse client version 23.3.1.2823 (official build).
-Connecting to localhost:9000 as user default.
-Connected to ClickHouse server version 23.3.1 revision 54462.
-
-Warnings:
- * Linux is not using a fast clock source. Performance can be degraded. Check /sys/devices/system/clocksource/clocksource0/current_clocksource
- * Linux threads max count is too low. Check /proc/sys/kernel/threads-max
- * Available memory at server startup is too low (2GiB).
-
-clickhouse01 :)
-
 root@ip-10-0-6-24:~/ashwini_workdir/clickhouse# docker-compose up -d
 Starting zookeeper ... done
 Starting clickhouse03 ... done
@@ -48,7 +32,24 @@ f67bd83c305a   clickhouse/clickhouse-server:latest   "/entrypoint.sh"         3 
 
 When containers are running, connect to clickhouse-client and test
 
-```clickhouse01 :) CREATE DATABASE IF NOT EXISTS Example_DB ON CLUSTER '{cluster}';
+```
+root@ip-10-0-6-24:~/ashwini_work/clickhouse_Ashwini# docker exec -it clickhouse01  bash
+root@clickhouse01:/#
+root@clickhouse01:/#
+root@clickhouse01:/#
+root@clickhouse01:/# clickhouse-client
+ClickHouse client version 23.3.1.2823 (official build).
+Connecting to localhost:9000 as user default.
+Connected to ClickHouse server version 23.3.1 revision 54462.
+
+Warnings:
+ * Linux is not using a fast clock source. Performance can be degraded. Check /sys/devices/system/clocksource/clocksource0/current_clocksource
+ * Linux threads max count is too low. Check /proc/sys/kernel/threads-max
+ * Available memory at server startup is too low (2GiB).
+
+clickhouse01 :)
+
+clickhouse01 :) CREATE DATABASE IF NOT EXISTS Example_DB ON CLUSTER '{cluster}';
 
 CREATE DATABASE IF NOT EXISTS Example_DB ON CLUSTER `{cluster}`
 
