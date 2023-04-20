@@ -3,14 +3,15 @@ Data Replication in ClickHouse (Docker Based Setup) , 3 Node Replication Cluster
 
 ## Requirment -- Download these files from Github repo
 
-```docker-compose.yaml
-config_ASH.xml
-clusters_ASH.xml
-listen_host_ASH.xml
-zookeeper_ASH.xml
-macros_1_ASH.xml
-macros_2_ASH.xml
-macros_3_ASH.xml
+```
+docker-compose.yaml
+config.xml
+clusters.xml
+listen_host.xml
+zookeeper.xml
+macros_1.xml
+macros_2.xml
+macros_3.xml
 ```
 
 Execute below commands from docker Host 
@@ -109,15 +110,17 @@ Query id: dfd344dd-8bf1-4a55-a839-9de9e0e4ef7c
 
 1 row in set. Elapsed: 0.002 sec.
 
-clickhouse02 :)  insert into replicated_example values (1,'Ashwini');
+clickhouse01 :) insert into Example_DB.product values (now(),9832,11);
 
-INSERT INTO replicated_example FORMAT Values
+INSERT INTO Example_DB.product FORMAT Values
 
-Query id: 0d38598e-416d-4824-adf1-a9313a1944d5
+Query id: ba051e61-3465-4d76-ad12-a9ccbc97f028
 
 Ok.
 
-1 row in set. Elapsed: 0.012 sec.
+1 row in set. Elapsed: 0.015 sec.
+
+clickhouse01 :)
 
 clickhouse01 :) select * from Example_DB.product;
 
