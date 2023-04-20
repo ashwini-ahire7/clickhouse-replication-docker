@@ -33,7 +33,7 @@ f67bd83c305a   clickhouse/clickhouse-server:latest   "/entrypoint.sh"         3 
 When containers are running, connect to clickhouse-client and test
 
 ```
-root@ip-10-0-6-24:~/ashwini_work/clickhouse_Ashwini# docker exec -it clickhouse01  bash
+root@ip-10-0-6-24:~/ashwini_workdir/clickhouse# docker exec -it clickhouse01  bash
 root@clickhouse01:/#
 root@clickhouse01:/#
 root@clickhouse01:/#
