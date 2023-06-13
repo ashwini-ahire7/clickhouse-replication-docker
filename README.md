@@ -15,6 +15,11 @@ macros_3.xml
 ```
 
 Execute below commands from docker Host 
+
+If you want to run specific version of clickhouse then just update image for specific version in docker-compose.yaml file.
+Example : image: clickhouse/clickhouse-server:23.5.2.7-alpine, Update for all ClickHouse Nodes in Cluster. 
+Visit docker hub to get correct image tag : https://hub.docker.com/r/clickhouse/clickhouse-server/tags
+
 ```
 root@ip-10-0-6-24:~/ashwini_workdir/clickhouse# docker-compose up -d
 Starting zookeeper ... done
