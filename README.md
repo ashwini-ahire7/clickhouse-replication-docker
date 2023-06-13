@@ -14,11 +14,13 @@ macros_2.xml
 macros_3.xml
 ```
 
-Execute below commands from docker Host 
 
 If you want to run specific version of clickhouse then just update image for specific version in docker-compose.yaml file.
 Example : image: clickhouse/clickhouse-server:23.5.2.7-alpine, Update for all ClickHouse Nodes in Cluster. 
 Visit docker hub to get correct image tag : https://hub.docker.com/r/clickhouse/clickhouse-server/tags
+
+
+Execute below commands on docker Host 
 
 ```
 root@ip-10-0-6-24:~/ashwini_workdir/clickhouse# docker-compose up -d
@@ -52,7 +54,6 @@ Warnings:
  * Linux threads max count is too low. Check /proc/sys/kernel/threads-max
  * Available memory at server startup is too low (2GiB).
 
-clickhouse01 :)
 
 clickhouse01 :) CREATE DATABASE IF NOT EXISTS Example_DB ON CLUSTER '{cluster}';
 
@@ -68,8 +69,6 @@ Query id: d572b0db-23b0-432d-b144-3535445ed120
 
 3 rows in set. Elapsed: 0.143 sec.
 
-clickhouse01 :)
-clickhouse01 :)
 clickhouse01 :) CREATE TABLE Example_DB.product ON CLUSTER '{cluster}'
                                (
                                     created_at DateTime,
@@ -101,8 +100,6 @@ Query id: 26d805bd-14d7-4d88-9111-4aa3360ea863
 
 3 rows in set. Elapsed: 0.309 sec.
 
-clickhouse01 :)
-clickhouse01 :)
 clickhouse01 :) select * from Example_DB.product;
 
 SELECT *
@@ -125,8 +122,6 @@ Query id: ba051e61-3465-4d76-ad12-a9ccbc97f028
 Ok.
 
 1 row in set. Elapsed: 0.015 sec.
-
-clickhouse01 :)
 
 clickhouse01 :) select * from Example_DB.product;
 
